@@ -13,11 +13,13 @@ serial_number: '053'
 doc_id: 'DMTN-053'
 
 # Title of the document, without the series/serial designation
-doc_title: 'Observations on I/O activity induce by ingestImages.py and processCcd.py'
+doc_title: 'Observations on I/O activity induced by ingestImages.py and processCcd.py'
 
 # Author names, ordered as a list. Each author name should be formatted as 'First Last'
 authors:
     - 'Fabio Hernandez'
+    - 'Dominique Boutigny'
+    - 'Loic Tortay'
 
 # Current document revision date, YYYY-MM-DD
 # Only set this field if you need to manually fix the revision date;
@@ -37,7 +39,7 @@ authors:
 copyright: '2017, AURA/LSST'
 
 # Description. A short, 1-2 sentence statemement used by document indices.
-description: 'In this note we present some aspects of the observed I/O behavior of the command line tasks ingestImages.py and processCcd.py when used for processing HSC data and the issues the current implementation may raise for processing data at the scale needed for LSST'
+description: 'In this note we present some aspects of the observed I/O behavior of the command line tasks ingestImages.py and processCcd.py when used for processing HSC data and the issues the current implementation may raise for processing data at the scale needed for LSST.'
 
 # Abstract, if available
 # abstract: >
