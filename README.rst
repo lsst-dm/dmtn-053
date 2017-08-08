@@ -7,14 +7,14 @@
   .. image:: https://zenodo.org/badge/doi/10.5281/zenodo.#####.svg
      :target: http://dx.doi.org/10.5281/zenodo.#####
 
-########################################################################
-Observations on I/O activity induce by ingestImages.py and processCcd.py
-########################################################################
+#########################################################################
+Observations on I/O activity induced by ingestImages.py and processCcd.py
+#########################################################################
 
 DMTN-053
 ========
 
-In this note we present some aspects of the observed I/O behavior of the command line tasks ingestImages.py and processCcd.py when used for processing HSC data and the issues the current implementation may raise for processing data at the scale needed for LSST
+In this note we present some aspects of the observed I/O behavior of the command line tasks ``ingestImages.py`` and ``processCcd.py`` (weekly version ``w_2017_29``) when used for processing HSC data and the issues the current implementation may raise for processing data at the scale needed for LSST.
 
 **Links:**
 
