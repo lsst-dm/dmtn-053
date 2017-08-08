@@ -47,8 +47,8 @@
 Introduction
 ============
 
-While processing processing HSC data using the LSST stack on the batch farm of CC-IN2P3, a rather low CPU efficiency (i.e. the ratio CPU time/wall time) was observed. 
-At CC-IN2P3, both the raw HSC images and the resulting reduced images are stored in a GPFS cluster. It was hypothesized that the observed batch jobs' undesired behavior could be linked to some GPFS client thrashing, so the authors decided to investigate.
+While processing processing HSC data using the LSST stack on the batch farm of `CC-IN2P3 <https://cc.in2p3.fr/en>`_, a rather low CPU efficiency (i.e. the ratio CPU time/wall time) was observed. 
+At CC-IN2P3, both the raw HSC images and the resulting reduced images are stored in a GPFS cluster. It was hypothesized that the observed batch jobs' undesired behavior could be linked to some GPFS client thrashing, so we decided to investigate.
 
 This note summarizes what we observed in the first analysis pass. It was first published as a `LSST community post <https://community.lsst.org/t/observations-on-i-o-activity-induced-by-ingestimages-py-and-processccd-py/2131>`_, where you can find the feedback provided by experts on the LSST software framework.
 
