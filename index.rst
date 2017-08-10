@@ -47,10 +47,11 @@
 Introduction
 ============
 
-While processing processing HSC data using the LSST stack on the batch farm of `CC-IN2P3 <https://cc.in2p3.fr/en>`_, a rather low CPU efficiency (i.e. the ratio CPU time/wall time) was observed. 
+While processing processing `HSC <https://hsc-release.mtk.nao.ac.jp/doc/>`_ data using the LSST stack in `IN2P3 computing center (CC-IN2P3) <https://cc.in2p3.fr/en>`_ batch farm, a rather low CPU efficiency (i.e. the ratio CPU time/wall time) was observed.
+
 At CC-IN2P3, both the raw HSC images and the resulting reduced images are stored in a GPFS cluster. It was hypothesized that the observed batch jobs' undesired behavior could be linked to some GPFS client thrashing, so we decided to investigate.
 
-This note summarizes what we observed in the first analysis pass. It was first published as a `LSST community post <https://community.lsst.org/t/observations-on-i-o-activity-induced-by-ingestimages-py-and-processccd-py/2131>`_, where you can find the feedback provided by experts on the LSST software framework.
+This note summarizes what we observed in the early analysis pass. It was first published as a `LSST community post <https://community.lsst.org/t/observations-on-i-o-activity-induced-by-ingestimages-py-and-processccd-py/2131>`_, where you can find some feedback provided by experts on the LSST software framework.
 
 Testing environment
 ===================
@@ -183,7 +184,7 @@ This looks really suspicious and is likely unintended. If we look in detail what
 
 It is not clear why it is necessary to re-read the whole file before each write operation. But if this is the intended behavior, this may be done in a scratch area local to the compute node and copy the result to the final destination when appropriate. Given the sizes of the generated files, the amount of storage local to the compute node is unlikely to be the limiting factor.
 
-The details of all the I/O activity on those 2 files, as reported by ``strace(1)`` is available `here <https://gist.github.com/airnandez/2a1af126c809f21b8097382502a02f31>`_.
+The details of all the I/O activity on those 2 files, as reported by ``strace(1)``, are available `here <https://gist.github.com/airnandez/2a1af126c809f21b8097382502a02f31>`_.
 
 
 Conclusion
@@ -192,7 +193,8 @@ Conclusion
 The work on understading the I/O activity induced by the LSST command line tasks is just starting. We consider this a very important ingredient for designing the storage infrastructure that best suits the needs of bulk LSST data processing. Initial results using the LSST software with precursor datasets show that there are several aspects of the behavior of this software that needs to be understood and fed back to the developers.
 
 
-.. note::
+..
+  note::
 
    **This technote is not yet published.**
 
